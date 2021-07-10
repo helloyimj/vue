@@ -62,3 +62,72 @@
 </body>
 
 </html>
+
+<script>
+ var objarray = [
+        { text: 'One', value: 'A' },
+        { text: 'Two', value: 'B' },
+        { text: 'Three', value: 'C' }
+    ];
+    // objarray 에 { text: 'Four', value: 'D' } 를 추가하시오.
+    // objarray.push({ text: 'Four', value: 'D' } );
+    objarray[objarray.length] = { text: 'Four', value: 'D' };
+    console.log(objarray);
+
+    // objarray 에서 { text: 'Two', value: 'B' } 를 { text: '2', value: '2' } 로 바꾸시오.
+    objarray[1] = { text: '2', value: '2' };
+    console.log(objarray);
+
+    // objarray 에서 filter 메서드를 사용하여 text의 값이 'One' 인 객체들을 찾으시오
+    const newobj = objarray.filter( ( value, index, array ) => {
+    //value === { text: '2', value: '2' }
+    return value.text === "One"; // true or false
+});
+    console.log(newobj);
+
+    // objarray 에서 { text: 'Three', value: 'C' } 를 삭제하시오 splice 사용
+    objarray.splice(2,1);
+    console.log(objarray);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//내 답
+
+objarray[3] = { text: 'Four', value: 'D' };
+console.log(objarray);
+
+objarray[1] ={ text: '2', value: '2' };
+console.log(objarray);
+
+// objarray.filter( ( value, index, array ) => {
+//     return text = 'One';
+// });
+// console.log(objarray);
+
+// const arrfilter = objarray.filter( ( value, index, array ) => {
+// // debugger;
+// return text = 'One';
+// });
+// console.log(arrfilter);
+
+
+delete objarray[2];
+console.log(objarray);
+
+</script>
