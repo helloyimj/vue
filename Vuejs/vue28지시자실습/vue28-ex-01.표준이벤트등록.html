@@ -67,17 +67,17 @@
         </xmp>
         <ul>
             <li>
-                <a class="image3" href="../images/image3.jpg" click="imageclick">
+                <a class="image3" href="../images/image3.jpg" v-on:click="imageclick">
                     강아지 사진
                 </a>
             </li>
             <li>
-                <a class="image3" href="../images/image4.jpg" click="imageclick">
+                <a class="image3" href="../images/image4.jpg" v-on:click="imageclick">
                     고양이 사진
                 </a>
             </li>
         </ul>
-        <img id="img2" src="img_image3" />
+        <img id="img2" v-bind:src="img_image3">
         <hr />
 
         <xmp>
@@ -89,8 +89,8 @@
             이미지 위에 마우스를 내리면(mouseout ) ==> ../images/but1.gif , ../images/img_swap_off.png
             이미지 위에 마우스를 올리면(mouseover) ==> ../images/but2.gif , ../images/img_swap_on.png
         </xmp>
-        <img src="img_but1" id="but1"     mouseover="imageover" mouseout="imageout" />
-        <img src="img_swap" id="img-swap" mouseover="imageover" mouseout="imageout" />
+        <img src="../images/but1.gif"  v-bind:id="but"   mouseover="imageover" mouseout="imageout" />
+        <img src="img_swap" v-bind:id="swap"  mouseover="imageover" mouseout="imageout" />
         <hr />
 
         <xmp>
@@ -144,8 +144,80 @@
 
     </div>
 
-    
+
 
 </body>
 
 </html>
+
+
+<!-- vue 플러그인 임포트   -->
+<script src="https://unpkg.com/vue@2.5.16/dist/vue.js">/* vue 플러그인 임포트 */</script>
+<script src="https://unpkg.com/vuex@3.3.0/dist/vuex.js"> /* vuex 플러그인 임포트 */</script>
+<script src="https://unpkg.com/vue-router@3.1.6/dist/vue-router.js"> /* vue 라우터 플러그인 임포트 */</script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"> /* axios 플러그인 임포트 */</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> /* jQuery 플러그인 임포트 */</script>
+<script>
+
+new Vue({
+    /* edtmc^2w */
+    el: "#app",
+    data: {
+        /* 인스턴스 안에서 사용되는 변수 등록, 공유 변수 */
+        img_image3: null,
+    //template: ``,
+    methods: {
+        /* 이벤트 핸들러 등록 */
+        imageclick: function(event){
+            debugger;
+            event.preventDefault();
+            event.stopPropagation();
+            var href = event.target.href;
+            console.log(href);
+            this.$data.img_image3 = href;
+            //var ext = href.substr(href.lenght - 3,3);
+            //console.log(ext);
+        },
+
+        imageclick: function(event){
+            debugger;
+            event.preventDefault();
+            event.stopPropagation();
+            var href = event.target.href;
+            console.log(href);
+            this.$data.img_image3 = href;
+            //var ext = href.substr(href.lenght - 3,3);
+            //console.log(ext);
+        },
+
+        imageover: function(event){
+            debugger;
+            var src = event.target.src;
+            this.$data.img_image3 = src;///
+            console.log(src);
+            //var src = src.substr(href.lenght - 3,3);
+            //console.log(ext);
+        },
+
+    },
+    components: {
+        /* 지역 컴포넌트 등록. 예시) "태그명" : 컴포넌트명 */
+
+    },
+    computed: {
+        /* 자동처리 + 동기식. 메서드로 작성. return 필수. */
+
+    },
+    watch: {
+        /* 자동처리 + 비동기식. data 에 등록된 프로퍼티 모니터링. 메서드로 작성. 매개변수 입력 필수  */
+
+    },
+    mounted: function() {
+        console.log("mounted");
+    },
+    updated: function() {
+        console.log("updated");
+    },
+});
+
+</script>

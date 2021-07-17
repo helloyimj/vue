@@ -33,7 +33,7 @@
 
         data 속성 직접 접근 방법
             실행 후 크롬 개발자 도구 콘솔에서 테스트해보면
-            인스턴스명.name
+            this.$data.name
             인스턴스명.$data.name 같이 접근할 수 있다.
             # 인스턴스 속성에 $식별자를 앞에 붙이고 있는데 이는 이름 충돌을 피하기 위해서다.
 
@@ -45,9 +45,10 @@
 
             해결방법
                 (1)Vue.set(object, key, value)를 이용해서 변경한다.
-                (2)this.$set(object, key, value)
+                (2)this.$set(object, key, value)를 이용해서 변경한다.
                 (3)splice()함수를 사용하여 변경
-                (4)배열 사본을 만들어 수정한 뒤 재할당=>ES6 (spread 연산자), map() 함수사용
+                (4)배열 복제 후 재할당
+                    => ES6 (spread 연산자), map() 함수 사용.
 
         [참조]page 40~42, 108~111
         <hr>
