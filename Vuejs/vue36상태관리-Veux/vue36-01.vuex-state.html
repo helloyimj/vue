@@ -133,6 +133,7 @@
             },
             decrement: function(state/* 고정 */, param/* mutations.commit 호출시 넘겨지는 값 */){
                 state.counter = state.counter - param;
+
             },
         },
         state: {
@@ -172,11 +173,11 @@
             increment(event){
                 // this.$data.counter = this.$data.counter + 1;
                 // stroer.dispatch( 이름, 값)
-                strore.dispatch( "increment", 1);
+                strore.dispatch( "increment", 1)
             },
             decrement(event){
                 // this.$data.counter = this.$data.counter - 1;
-                strore.dispatch( "decrement", 1);
+                strore.dispatch( "decrement", 1)
 
             },
         },
