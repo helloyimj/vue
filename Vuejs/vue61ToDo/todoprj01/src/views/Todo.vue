@@ -41,16 +41,11 @@ import TodoHeader from "../components/todo/TodoHeader.vue";
 import TodoInput from "../components/todo/TodoInput.vue";
 import TodoList from "../components/todo/TodoList.vue";
 import TodoFooter from "../components/todo/TodoFooter.vue";
+
 // Vuex 인스턴스 만들기
 import store from "../store/index.js"; // var store = new Vuex.Store({});
+
 export default {
-    /* pdtmc^2w */
-    props: [],
-    data: function () {
-        /* 컴포넌트 안에서 사용되는 변수 등록. 개별 변수 */
-        return {};
-    },
-    //template: `#template1`,
     methods: {
         /* 이벤트 핸들러 등록 + 일반 함수 */
         addTodo(newTodoItem) {
@@ -63,10 +58,7 @@ export default {
             store.dispatch("removeTodo", id, index);
         },
         clearAll() {
-            //console.log(event.target);
-            // 전체 삭제
-            // this.$data.todoItems = [];
-            this.$set(this.$data, "todoItems", []);
+            store.dispatch("clearAll");
         }
     },
     components: {
@@ -82,14 +74,16 @@ export default {
             return store.getters.todoItems;
         }
     },
-    watch: {
-        /* 자동처리 + 비동기식. data 에 등록된 프로퍼티 모니터링. 메서드로 작성. 매개변수 입력 필수  */
+    watch: {},
+    created: function () {
+        console.log("created");
+        // read. store의 "getTodo" dispatch
     },
     mounted: function () {
         console.log("mounted");
     },
     updated: function () {
-        console.log(this.$data.todoItems);
+        console.log("updated");
     }
 };
 </script>

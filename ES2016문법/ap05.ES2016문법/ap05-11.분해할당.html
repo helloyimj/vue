@@ -17,3 +17,31 @@
     </xmp>
 </body>
 </html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js">
+    /* 자바스크립트로 컴파일러. ES6-->ES5, JSX-->ES5 */
+</script>
+
+<script type="text/babel">
+
+const points = [10, 20, 30];
+const x1 = points[0];
+const y1 = points[1];
+const z1 = points[2];
+
+
+const [x2, y2, z2] = points; // const [x2, y2, z2]= [10, 20, 30];
+console.log(x2, y2, z2);
+
+const [x3, y3] = points; // const [x3, y3]= [10, 20, 30];
+console.log(x3, y3);
+
+const [x4, ,z4] = points; // const [x4,, z4]= [10, 20, 30];
+console.log(x4, z4);
+
+const [x5, , , w5] = points; // const [x5, , , w5]= [10, 20, 30];
+console.log(x5, w5);
+
+
+
+</script>

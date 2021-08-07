@@ -37,10 +37,12 @@ input:focus {
     display: table;
     transition: opacity 0.3s ease;
 }
+
 .modal-wrapper {
     display: table-cell;
     vertical-align: middle;
 }
+
 .modal-container {
     width: 300px;
     margin: 0px auto;
@@ -51,22 +53,28 @@ input:focus {
     transition: all 0.3s ease;
     font-family: Helvetica, Arial, sans-serif;
 }
+
 .modal-header h3 {
     margin-top: 0;
     color: #62acde;
 }
+
 .modal-body {
     margin: 20px 0;
 }
+
 .modal-default-button {
     float: right;
 }
+
 .modal-enter {
     opacity: 0;
 }
+
 .modal-leave-active {
     opacity: 0;
 }
+
 .modal-enter .modal-container,
 .modal-leave-active .modal-container {
     -webkit-transform: scale(1.1);
@@ -132,6 +140,7 @@ export default {
             // 부모에게 값을 보내기
             // this.$emit("이벤트명", 값)
             this.$emit("add-todo", this.$data.newTodoItem);
+
             // 입력값 지우기
             this.$data.newTodoItem = "";
         }

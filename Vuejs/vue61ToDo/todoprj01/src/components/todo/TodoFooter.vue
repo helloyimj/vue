@@ -1,5 +1,4 @@
-<style scoped>
-</style>
+<style scoped></style>
 
 <template>
     <div class="clearAllContainer">
@@ -19,7 +18,7 @@ export default {
     methods: {
         /* 이벤트 핸들러 등록 + 일반 함수 */
         clearAll() {
-            //console.log(event.target);
+            console.log(event.target);
             // 부모에게 값을 보내기
             // this.$emit("이벤트명", 값)
             this.$emit("clear-all");

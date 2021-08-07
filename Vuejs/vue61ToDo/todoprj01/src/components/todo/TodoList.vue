@@ -29,6 +29,7 @@ li.checked {
     margin-left: auto;
     color: #de4343;
 }
+
 .list-enter-active,
 .list-leave-active {
     transition: all 1s;
@@ -85,13 +86,13 @@ export default {
             }
         },
         doneToggle(id, index) {
-            //console.log(event.target);
+            console.log(event.target);
             // 부모에게 값을 보내기
             // this.$emit("이벤트명", 값)
             this.$emit("done-toggle", id, index);
         },
         removeTodo(id, index) {
-            //console.log(event.target);
+            console.log(event.target);
             // 부모에게 값을 보내기
             // this.$emit("이벤트명", 값)
             this.$emit("remove-todo", id, index);
